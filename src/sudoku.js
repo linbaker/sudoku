@@ -44,4 +44,32 @@ Game.prototype.square = function(x, y) {
   return arr;
 }
 
+Game.prototype.check = function(x,y, input){
+  var row = this.row(y);
+  var column = this.column(x);
+  var square = this.square(x,y);
+  // row[x] = -1;
+  // column[y] = -1;
+  // var slicedRow;
+  // if(x == 0){
+  //   slicedRow = row.slice(1,8);
+  // }else if(x == 8){
+  //   slicedRow = row.slice(0,7);
+  // }else{
+  //   slicedRow = row.slice(0,x).concat(row.slice(x+1));
+  // }
+  if(row.includes(input))
+  {
+    return false;
+  }
+  if(column.includes(input))
+  {
+    return false;
+  }
+  if(square.includes(input))
+  {
+    return false;
+  }
+return true;
+}
 //exports.gameModule = Game;
